@@ -4,7 +4,7 @@
     <form method="POST" action="">
         {{ form.csrf_token }}
         <fieldset class="form-group">
-            <legend class="border_bottom mb-4">Join Today!</legend>
+            <legend class="border_bottom mb-4">Sign in</legend>
             <div class="form-group pb-2">
                 {{ form.email.label(class="form-control-label") }}
                 {% if form.email.errors %}
