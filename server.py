@@ -51,6 +51,7 @@ class Post(db.Model):
     __tablename__ = "blog_posts"
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String(100), nullable=False)
+    sub_title: Mapped[str] = mapped_column(String(100), nullable=False)
     date_posted: Mapped[str] = mapped_column(String(250), nullable=False)
     content: Mapped[str] = mapped_column(Text, nullable=False)
     author_id: Mapped[int] = mapped_column(Integer, db.ForeignKey("users.id"))
@@ -168,6 +169,7 @@ def add_new_post():
     if form.validate_on_submit():
         new_post = Post(
             title=form.title.data,
+            sub_title=form.sub_title.data,
             content=form.content.data,
             author=current_user,
             date_posted=date.today().strftime("%B %d, %Y")
@@ -203,6 +205,7 @@ def edit_post(post_id):
     post = db.get_or_404(Post, post_id)
     edit_form = CreatePost(
         title=post.title,
+        sub_title=post.sub_title,
         author=post.author,
         content=post.content
     )

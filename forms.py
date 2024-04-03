@@ -21,6 +21,7 @@ class LoginForm(FlaskForm):
 
 class CreatePost(FlaskForm):
     title = StringField("Blog Post Title", validators=[DataRequired()])
+    sub_title = StringField("Blog Sub-Title", validators=[DataRequired()])
     content = CKEditorField("Blog Content", validators=[DataRequired()])
     submit = SubmitField("Submit Post")
 

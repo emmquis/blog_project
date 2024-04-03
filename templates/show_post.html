@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 <article class="blog-post">
-    <h2 class="display-5 link-body-emphasis mb-1">{{ post.title }}</h2>
+    <h2 class="display-4 link-body-emphasis mt-2 mb-1">{{ post.title }}</h2>
+    <h3 class="display-6 mt-3" >{{ post.sub_title }}</h3>
     <p class="blog-post-meta">{{ post.date_posted }} by <a href="#">{{ post.author.username }}</a></p>
     <p>{{ post.content }}</p>
 </article>
