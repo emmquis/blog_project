@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-    {% for post in posts %}
+    {% for post in posts|reverse %}
     <article class="blog-post">
         <h2 class="display-5 link-body-emphasis mb-1"><a href="{{ url_for('show_post', post_id=post.id) }}" class="link-dark link-underline-opacity-0 link-underline-opacity-10-hover">{{ post.title }}</a></h2>
         <p class="blog-post-meta">{{ post.date_posted }} by <a href="#">{{ post.author.username }}</a></p>
