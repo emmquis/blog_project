@@ -1,0 +1,22 @@
+/*
+body {
+    background-color: lightblue;
+}
+*/
+
+.comment {
+    padding-top: 25px;
+}
+
+.commentList {
+    list-style-type: none;
+}
+
+.commentText {
+    font-size: 16px;
+}
+
+.subText {
+    font-size: 13px;
+    color: #808080
+}

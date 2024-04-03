@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for post in posts %}
+    <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1"><a href="{{ url_for('show_post', post_id=post.id) }}" class="link-dark link-underline-opacity-0 link-underline-opacity-10-hover">{{ post.title }}</a></h2>
+        <p class="blog-post-meta">{{ post.date_posted }} by <a href="#">{{ post.author.username }}</a></p>
+
+        <p>{{ post.content }}</p>
+        {% if current_user.id ==1 %}
+        <small>
+            <a href="{{ url_for('delete', post_id=post.id) }}">Delete</a>
+        </small>
+        {% endif %}
+        <hr>
+    </article>
+    {% endfor %}
+    {% if current_user.id ==1 %}
+    <div class="d-flex justify-content-end mb-4">
+        <a class="btn btn-primary float-right" href="{{url_for('add_new_post')}}">Create New Post</a>
+    </div>
+    {% endif %}
+{% endblock content %}

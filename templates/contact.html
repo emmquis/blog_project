@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        <fieldset class="form-group">
+            <legend class="border_bottom mb-4">Contact Us</legend>
+            <div class="form-group pb-2">
+                {{ form.name.label(class="form-control-label") }}
+                {{ form.name(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group pb-2">
+                {{ form.email.label(class="form-control-label") }}
+                {{ form.email(class="form-control") }}
+            </div>
+            <div class="form-group pb-2">
+                {{ form.contact_text.label(class="form-control-label") }}
+                {{ form.contact_text(class="form-control") }}
+            </div>
+        </fieldset>
+        <div class="form-group pb-2">
+                {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}
