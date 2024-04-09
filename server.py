@@ -12,7 +12,7 @@ import smtplib
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '3f31586573a0a6c66ee4c5c37bc1796b'
+app.config['SECRET_KEY'] = '[add_secret key]'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 ckeditor = CKEditor(app)
 
